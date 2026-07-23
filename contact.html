@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+
+    <title>Contact Us | Prime Kingdom Exim Pvt. Ltd.</title>
+
+    <meta name="description" content="Get in touch with Prime Kingdom Exim Pvt. Ltd. for scrap metal sourcing, recycling, exports, partnerships, and quotations." />
+    <meta name="keywords" content="Prime Kingdom Exim, contact, scrap metal, recycling, exports, quotations, partnerships" />
+    <meta name="author" content="Prime Kingdom Exim Pvt. Ltd." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#2563EB" />
+
+    <link rel="canonical" href="https://www.primekingdomexim.com/contact.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo-small.png" />
+    <link rel="shortcut icon" href="images/logo-small.png" />
+    <link rel="apple-touch-icon" href="images/logo-small.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Contact Us | Prime Kingdom Exim Pvt. Ltd." />
+    <meta property="og:description" content="Get in touch with Prime Kingdom Exim Pvt. Ltd. for scrap metal sourcing, recycling, exports, partnerships, and quotations." />
+    <meta property="og:url" content="https://www.primekingdomexim.com/contact.html" />
+    <meta property="og:site_name" content="Prime Kingdom Exim Pvt. Ltd." />
+    <meta property="og:image" content="https://www.primekingdomexim.com/images/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact Us | Prime Kingdom Exim Pvt. Ltd." />
+    <meta name="twitter:description" content="Get in touch with Prime Kingdom Exim Pvt. Ltd. for scrap metal sourcing, recycling, exports, partnerships, and quotations." />
+    <meta name="twitter:image" content="https://www.primekingdomexim.com/images/og-image.jpg" />
+
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        /* ==========================================
+           1. CORE VARIABLES & RESET
+           ========================================== */
+        :root {
+            --primary: #2563EB;
+            --primary-dark: #1D4ED8;
+            --primary-glow: rgba(37, 99, 235, 0.35);
+            --secondary: #334155;
+            --emerald: #22C55E;
+            --emerald-glow: rgba(34, 197, 94, 0.35);
+            --copper: #D97706;
+            --bg-light: #FCFCFD;
+            --bg-alt: #F5F9FC;
+            --bg-highlight: #EEF6FF;
+            --dark-bg: #0B1120;
+            --dark-card: #1E293B;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --border-light: #E2E8F0;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 28px;
+            --shadow-subtle: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 20px 40px -15px rgba(37, 99, 235, 0.18);
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .cursor-glow {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s;
+        }
+
+        .global-bg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.04;
+            background-image:
+                radial-gradient(#2563EB 0.75px, transparent 0.75px),
+                linear-gradient(to right, #334155 1px, transparent 1px),
+                linear-gradient(to bottom, #334155 1px, transparent 1px);
+            background-size: 30px 30px, 90px 90px, 90px 90px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--text-main);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #0babfc 0%, #00D2FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-emerald {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-smooth);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            z-index: 1;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #FFFFFF;
+            box-shadow: 0 10px 25px -5px var(--primary-glow);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px -5px rgba(37, 99, 235, 0.5);
+        }
+
+        .btn-glass {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: #FFFFFF;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-glass:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            color: #FFFFFF;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: #FFFFFF;
+            transform: translateY(-3px);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background: var(--bg-highlight);
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(37, 99, 235, 0.15);
+            flex-wrap: wrap;
+        }
+
+        .section-title {
+            font-size: 2.75rem;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.5px;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* ==========================================
+           2. NAVIGATION (EXACT MATCH)
+           ========================================== */
+        .navbar-wrapper {
+            position: fixed;
+            top: 20px;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: var(--transition-smooth);
+            padding: 0 1.5rem;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 2rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 100px;
+            transition: var(--transition-smooth);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: var(--border-light);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 0.5rem 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: #FFFFFF;
+            transition: var(--transition-smooth);
+            flex-shrink: 0;
+        }
+
+        .navbar.scrolled .logo-container {
+            color: var(--text-main);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            color: #FFFFFF;
+            border-radius: 21px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .logo-icon img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: rgba(0, 0, 0, 0.9);
+            position: relative;
+            padding: 0.25rem 0;
+            transition: var(--transition-smooth);
+        }
+
+        .navbar.scrolled .nav-link {
+            color: var(--secondary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: #FFFFFF;
+        }
+
+        .navbar.scrolled .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            flex-shrink: 0;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #000000;
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+            transition: var(--transition-smooth);
+            z-index: 1001;
+        }
+
+        .navbar.scrolled .mobile-toggle {
+            color: var(--text-main);
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 17, 32, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+            padding: 2rem;
+        }
+
+        .mobile-menu-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .mobile-menu-inner .nav-link {
+            font-size: 1.8rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 600;
+            padding: 0.5rem 0;
+        }
+
+        .mobile-menu-inner .nav-link:hover {
+            color: #FFFFFF;
+        }
+
+        .mobile-menu-inner .nav-link::after {
+            background: var(--primary);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: none;
+            border: none;
+            color: #FFFFFF;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            z-index: 1002;
+        }
+
+        .mobile-menu-close:hover {
+            transform: rotate(90deg);
+            color: var(--primary);
+        }
+
+        .mobile-cta-wrapper {
+            margin-top: 1rem;
+        }
+
+        .mobile-cta-wrapper .btn {
+            font-size: 1.1rem;
+            padding: 1rem 2.5rem;
+        }
+
+        /* ==========================================
+           3. PAGE BANNER
+           ========================================== */
+        .page-banner {
+            padding: 160px 0 70px 0;
+            background: var(--bg-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            opacity: 0.3;
+        }
+
+        .page-banner .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .page-banner .breadcrumb a {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .page-banner .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .page-banner .breadcrumb .separator {
+            color: var(--text-muted);
+            opacity: 0.5;
+        }
+
+        .page-banner .banner-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background: var(--bg-highlight);
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(37, 99, 235, 0.15);
+        }
+
+        .page-banner h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+
+        .page-banner .banner-desc {
+            max-width: 680px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        /* ==========================================
+           4. CONTACT SECTION — Two Columns
+           ========================================== */
+        .contact-section {
+            padding: 60px 0 80px 0;
+            background: var(--bg-light);
+            position: relative;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        /* LEFT COLUMN — Contact Cards */
+        .contact-info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .contact-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 1.5rem 1.75rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(37, 99, 235, 0.2);
+        }
+
+        .contact-card .card-icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            border-radius: 14px;
+            background: var(--bg-highlight);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: var(--transition-smooth);
+        }
+
+        .contact-card:hover .card-icon {
+            background: var(--primary);
+            color: #FFFFFF;
+        }
+
+        .contact-card .card-body h4 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+            color: var(--text-main);
+        }
+
+        .contact-card .card-body p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .contact-card .card-body p a {
+            color: var(--primary);
+        }
+
+        .contact-card .card-body p a:hover {
+            text-decoration: underline;
+        }
+
+        /* Why Contact Us */
+        .why-contact {
+            margin-top: 2rem;
+            background: #FFFFFF;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 1.75rem 2rem;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .why-contact h4 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.15rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .why-contact .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.85rem 1.5rem;
+        }
+
+        .why-contact .why-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .why-contact .why-item i {
+            color: var(--primary);
+            font-size: 0.9rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* RIGHT COLUMN — Form */
+        .contact-form-wrapper {
+            background: #FFFFFF;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .contact-form-wrapper h3 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .contact-form-wrapper .form-sub {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group.floating {
+            position: relative;
+        }
+
+        .form-group.floating input,
+        .form-group.floating textarea,
+        .form-group.floating select {
+            width: 100%;
+            padding: 1rem 1rem 0.5rem 1rem;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--text-main);
+            background: var(--bg-light);
+            border: 1.5px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            transition: var(--transition-smooth);
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+
+        .form-group.floating input:focus,
+        .form-group.floating textarea:focus,
+        .form-group.floating select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+
+        .form-group.floating input:not(:placeholder-shown),
+        .form-group.floating textarea:not(:placeholder-shown),
+        .form-group.floating select:not(:placeholder-shown) {
+            padding-top: 1.25rem;
+            padding-bottom: 0.25rem;
+        }
+
+        .form-group.floating input:focus~label,
+        .form-group.floating textarea:focus~label,
+        .form-group.floating input:not(:placeholder-shown)~label,
+        .form-group.floating textarea:not(:placeholder-shown)~label {
+            transform: translateY(-0.2rem) scale(0.8);
+            opacity: 0.7;
+        }
+
+        .form-group.floating label {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            pointer-events: none;
+            transition: var(--transition-smooth);
+            background: transparent;
+            padding: 0 0.2rem;
+            transform-origin: left top;
+            font-weight: 400;
+        }
+
+        .form-group.floating textarea~label {
+            top: 1rem;
+            transform: translateY(0);
+        }
+
+        .form-group.floating textarea:focus~label,
+        .form-group.floating textarea:not(:placeholder-shown)~label {
+            transform: translateY(-0.5rem) scale(0.8);
+            opacity: 0.7;
+        }
+
+        .form-group.floating textarea {
+            min-height: 120px;
+            resize: vertical;
+            padding-top: 1.25rem;
+        }
+
+        .form-group.floating input::placeholder,
+        .form-group.floating textarea::placeholder {
+            opacity: 0;
+        }
+
+        .form-group.floating input:focus::placeholder,
+        .form-group.floating textarea:focus::placeholder {
+            opacity: 0.3;
+        }
+
+        .form-group.floating select {
+            padding-top: 1.25rem;
+            padding-bottom: 0.25rem;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748B' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+        }
+
+        .form-group.floating select~label {
+            top: 0.75rem;
+            transform: translateY(0);
+        }
+
+        .form-group.floating select:focus~label,
+        .form-group.floating select:not(:placeholder-shown)~label {
+            transform: translateY(-0.5rem) scale(0.8);
+            opacity: 0.7;
+        }
+
+        .form-group.floating select option {
+            padding: 0.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .contact-form-wrapper .btn-submit {
+            width: 100%;
+            padding: 1.1rem;
+            font-size: 1.05rem;
+            margin-top: 0.5rem;
+        }
+
+        .contact-form-wrapper .btn-submit i {
+            transition: transform 0.3s ease;
+        }
+
+        .contact-form-wrapper .btn-submit:hover i {
+            transform: translateX(4px);
+        }
+
+        /* ==========================================
+           5. GOOGLE MAPS
+           ========================================== */
+        .map-section {
+            padding: 60px 0 100px 0;
+            background: var(--bg-alt);
+            position: relative;
+        }
+
+        .map-section .map-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        .map-section .map-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .map-section .map-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .map-wrapper {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+            border: 1px solid var(--border-light);
+            background: #E8ECF0;
+            position: relative;
+            height: 420px;
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #E8ECF0;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .map-placeholder i {
+            font-size: 3rem;
+            color: var(--primary);
+            opacity: 0.5;
+        }
+
+        /* ==========================================
+           6. FOOTER (EXACT MATCH)
+           ========================================== */
+        .footer {
+            background: #070B14;
+            color: rgba(255, 255, 255, 0.65);
+            padding-top: 80px;
+            padding-bottom: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(4, 1fr);
+            gap: 3rem;
+            margin-bottom: 60px;
+        }
+
+        .footer-title {
+            color: #FFFFFF;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.85rem;
+        }
+
+        .footer-links a:hover {
+            color: #FFFFFF;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* ==========================================
+           7. RESPONSIVE
+           ========================================== */
+
+        @media (max-width: 1200px) {
+            .contact-grid {
+                gap: 3rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .nav-menu {
+                display: none !important;
+            }
+            .nav-cta {
+                display: none !important;
+            }
+            .mobile-toggle {
+                display: block;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .contact-form-wrapper {
+                order: -1;
+            }
+
+            .page-banner h1 {
+                font-size: 2.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .map-wrapper {
+                height: 320px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .navbar-wrapper {
+                top: 10px;
+                padding: 0 0.75rem;
+            }
+            .navbar {
+                padding: 0.5rem 1rem;
+                border-radius: 50px;
+            }
+            .navbar.scrolled {
+                padding: 0.4rem 1rem;
+            }
+            .logo-container {
+                font-size: 1rem;
+                gap: 0.5rem;
+            }
+            .logo-icon {
+                width: 34px;
+                height: 34px;
+                font-size: 1rem;
+            }
+            .logo-icon img {
+                width: 34px;
+                height: 34px;
+            }
+
+            .page-banner {
+                padding: 130px 0 50px 0;
+            }
+            .page-banner h1 {
+                font-size: 2rem;
+            }
+            .page-banner .banner-desc {
+                font-size: 1rem;
+            }
+
+            .contact-section {
+                padding: 40px 0 60px 0;
+            }
+            .contact-form-wrapper {
+                padding: 1.5rem;
+            }
+            .contact-form-wrapper h3 {
+                font-size: 1.3rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .contact-card {
+                padding: 1.2rem 1.25rem;
+                gap: 1rem;
+            }
+            .contact-card .card-icon {
+                width: 40px;
+                height: 40px;
+                min-width: 40px;
+                font-size: 1rem;
+            }
+
+            .why-contact {
+                padding: 1.25rem 1.25rem;
+            }
+            .why-contact .why-grid {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .map-section {
+                padding: 40px 0 60px 0;
+            }
+            .map-section .map-header h2 {
+                font-size: 1.7rem;
+            }
+            .map-wrapper {
+                height: 240px;
+                border-radius: var(--radius-sm);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-bottom-links {
+                justify-content: center;
+            }
+
+            .mobile-menu-inner .nav-link {
+                font-size: 1.4rem;
+            }
+            .mobile-menu-close {
+                top: 20px;
+                right: 20px;
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .page-banner h1 {
+                font-size: 1.6rem;
+            }
+            .contact-form-wrapper {
+                padding: 1rem;
+            }
+            .contact-card {
+                padding: 1rem;
+                gap: 0.75rem;
+            }
+            .contact-card .card-body p {
+                font-size: 0.85rem;
+            }
+            .why-contact .why-item {
+                font-size: 0.85rem;
+            }
+            .map-wrapper {
+                height: 180px;
+            }
+        }
+
+        /* ==========================================
+           8. GSAP FADE-UP UTILITY
+           ========================================== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-up-d1 {
+            transition-delay: 0.08s;
+        }
+        .fade-up-d2 {
+            transition-delay: 0.16s;
+        }
+        .fade-up-d3 {
+            transition-delay: 0.24s;
+        }
+        .fade-up-d4 {
+            transition-delay: 0.32s;
+        }
+        .fade-up-d5 {
+            transition-delay: 0.40s;
+        }
+        .fade-up-d6 {
+            transition-delay: 0.48s;
+        }
+        .fade-up-d7 {
+            transition-delay: 0.56s;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mouse Pointer Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Global Background Mesh -->
+    <div class="global-bg-overlay"></div>
+
+    <!-- ========== NAVIGATION (EXACT MATCH) ========== -->
+    <div class="navbar-wrapper">
+        <div class="container" style="padding:0;">
+            <nav class="navbar" id="navbar">
+                <a href="index.html" class="logo-container">
+                    <div class="logo-icon"><img src="images/navbar-logo.png" alt="Prime Kingdom Exim Logo" /></div>
+                    <span style="color: #070B14;">PRIME KINGDOM</span>
+                </a>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="materials.html" class="nav-link">Materials</a></li>
+                    <!-- <li><a href="#industries" class="nav-link">Industries</a></li>
+                    <li><a href="#sustainability" class="nav-link">Sustainability</a></li> -->
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+
+                <div class="nav-cta">
+                    <a href="contact.html" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Request Quote</a>
+                </div>
+
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars" id="hamburgerIcon"></i>
+                </button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileOverlay">
+        <button class="mobile-menu-close" id="mobileClose" aria-label="Close Menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <ul class="mobile-menu-inner">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="materials.html" class="nav-link">Materials</a></li>
+            <!-- <li><a href="#industries" class="nav-link">Industries</a></li>
+            <li><a href="#sustainability" class="nav-link">Sustainability</a></li> -->
+            <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            <li class="mobile-cta-wrapper">
+                <a href="contact.html" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Request Quote</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- ========== SECTION 1: PAGE BANNER ========== -->
+    <section class="page-banner">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb fade-up">
+                <a href="index.html">Home</a>
+                <span class="separator"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i></span>
+                <span style="color:var(--text-main); font-weight:500;">Contact</span>
+            </div>
+
+            <!-- Tag -->
+            <div class="banner-tag fade-up fade-up-d1">
+                <i class="fa-solid fa-envelope"></i> Contact Us
+            </div>
+
+            <!-- Heading -->
+            <h1 class="fade-up fade-up-d2">
+                Let's <span class="text-gradient">Connect</span>
+            </h1>
+
+            <!-- Intro Paragraph -->
+            <p class="banner-desc fade-up fade-up-d3">
+                Prime Kingdom Exim Pvt Ltd welcomes enquiries regarding scrap metal sourcing, recycling, exports, partnerships, and quotations. Reach out to our team and we'll respond promptly.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 2: CONTACT (Two Columns) ========== -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+
+                <!-- LEFT COLUMN -->
+                <div class="contact-info-cards">
+
+                    <!-- Office Address -->
+                    <div class="contact-card fade-up fade-up-d1">
+                        <div class="card-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="card-body">
+                            <h4>Office Address</h4>
+                            <p>Corporate HQ, Trade Tower, Suite 1200,<br />Mumbai, Maharashtra 400001, India</p>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="contact-card fade-up fade-up-d2">
+                        <div class="card-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="card-body">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+1800555EXIM">+1 (800) 555-EXIM</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="contact-card fade-up fade-up-d3">
+                        <div class="card-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="card-body">
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@pkexim.com">info@pkexim.com</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Business Hours -->
+                    <div class="contact-card fade-up fade-up-d4">
+                        <div class="card-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div class="card-body">
+                            <h4>Business Hours</h4>
+                            <p>Mon – Fri: 9:00 AM – 6:00 PM (IST)<br />Sat – Sun: Closed</p>
+                        </div>
+                    </div>
+
+                    <!-- Why Contact Us -->
+                    <div class="why-contact fade-up fade-up-d5">
+                        <h4><i class="fa-solid fa-handshake" style="color:var(--primary); margin-right:0.5rem;"></i> Why Contact Us</h4>
+                        <div class="why-grid">
+                            <div class="why-item"><i class="fa-solid fa-bolt"></i> Fast Responses</div>
+                            <div class="why-item"><i class="fa-solid fa-headset"></i> Professional Support</div>
+                            <div class="why-item"><i class="fa-solid fa-file-invoice"></i> Request Quotations</div>
+                            <div class="why-item"><i class="fa-solid fa-handshake"></i> Business Partnerships</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT COLUMN — Contact Form -->
+                <div class="contact-form-wrapper fade-up fade-up-d2">
+                    <h3>Send an Inquiry</h3>
+                    <p class="form-sub">Fill in the details below and our team will get back to you shortly.</p>
+
+                    <form id="contactForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-group floating">
+                                <input type="text" id="fullName" placeholder=" " required />
+                                <label for="fullName">Full Name</label>
+                            </div>
+                            <div class="form-group floating">
+                                <input type="text" id="companyName" placeholder=" " />
+                                <label for="companyName">Company Name</label>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group floating">
+                                <input type="email" id="emailAddress" placeholder=" " required />
+                                <label for="emailAddress">Email Address</label>
+                            </div>
+                            <div class="form-group floating">
+                                <input type="tel" id="phoneNumber" placeholder=" " />
+                                <label for="phoneNumber">Phone Number</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group floating">
+                            <input type="text" id="subject" placeholder=" " required />
+                            <label for="subject">Subject</label>
+                        </div>
+
+                        <div class="form-group floating">
+                            <textarea id="message" placeholder=" " required></textarea>
+                            <label for="message">Message</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <i class="fa-solid fa-paper-plane"></i> Send Inquiry
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 3: GOOGLE MAPS ========== -->
+    <section class="map-section">
+        <div class="container">
+            <div class="map-header fade-up">
+                <span class="section-tag" style="margin:0 auto 1rem auto;">
+                    <i class="fa-solid fa-map-location-dot"></i> Our Location
+                </span>
+                <h2>Find Our <span class="text-gradient">Office</span></h2>
+                <p>Visit our office or connect with us to discuss your business requirements.</p>
+            </div>
+
+            <div class="map-wrapper fade-up fade-up-d1">
+                <!-- Google Maps Embed (Mumbai, India placeholder) -->
+                <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609947356!2d72.74110190000001!3d19.0821978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sus!4v1700000000000"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Prime Kingdom Exim Office Location"
+            ></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FOOTER (EXACT MATCH) ========== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="logo-container" style="color:#FFF; margin-bottom:1.25rem;">
+                    <div class="logo-icon"><img src="images/logo-small.png" alt=""></div>
+                    <span>PRIME KINGDOM EXIM Pvt. Ltd.</span>
+                </div>
+                <p style="margin-bottom:1.5rem; line-height:1.7;">
+                    Prime Kingdom Exim Pvt. Ltd. is a premier global enterprise specializing in industrial scrap procurement, sustainable recycling, metal trading, and containerized logistics.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="materials.html">Materials</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-title">Materials</h4>
+                <ul class="footer-links">
+                    <li><a href="#materials">Aluminium 6063</a></li>
+                    <li><a href="#materials">Aluminium 6061</a></li>
+                    <li><a href="#materials">Heavy Melting Steel</a></li>
+                    <li><a href="#materials">Copper Birch / Cliff</a></li>
+                    <li><a href="#materials">Stainless Steel Scrap</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-title">Contact</h4>
+                <ul class="footer-links" style="font-size:0.9rem;">
+                    <li><i class="fa-solid fa-location-dot" style="color:var(--primary); margin-right:8px;"></i> Corporate HQ, Trade Tower, Suite 1200</li>
+                    <li><i class="fa-solid fa-envelope" style="color:var(--primary); margin-right:8px;"></i> info@pkexim.com</li>
+                    <li><i class="fa-solid fa-phone" style="color:var(--primary); margin-right:8px;"></i> +1 (800) 555-EXIM</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>&copy; 2026 Prime Kingdom Exim Pvt. Ltd. All Rights Reserved.</div>
+        </div>
+    </div>
+</footer>
+
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+    /* ==========================================
+       1. MOUSE SPOTLIGHT
+       ========================================== */
+    const cursorGlow = document.getElementById('cursorGlow');
+    document.addEventListener('mousemove', (e) => {
+        cursorGlow.style.left = e.clientX + 'px';
+        cursorGlow.style.top = e.clientY + 'px';
+    });
+
+    /* ==========================================
+       2. NAVBAR SCROLL
+       ========================================== */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    /* ==========================================
+       3. MOBILE MENU TOGGLE
+       ========================================== */
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const mobileClose = document.getElementById('mobileClose');
+
+    function openMobileMenu() {
+        mobileOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+        mobileOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    mobileToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (mobileOverlay.classList.contains('open')) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+    });
+
+    mobileClose.addEventListener('click', closeMobileMenu);
+
+    mobileOverlay.addEventListener('click', (e) => {
+        if (e.target === mobileOverlay) {
+            closeMobileMenu();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileOverlay.classList.contains('open')) {
+            closeMobileMenu();
+        }
+    });
+
+    document.querySelectorAll('.mobile-menu-inner .nav-link').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+
+    /* ==========================================
+       4. FADE-UP ON SCROLL (Intersection Observer)
+       ========================================== */
+    const fadeElements = document.querySelectorAll('.fade-up');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -30px 0px'
+    });
+
+    fadeElements.forEach(el => observer.observe(el));
+
+    /* ==========================================
+       5. GSAP — extra polish
+       ========================================== */
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Subtle parallax on the map wrapper
+    gsap.utils.toArray('.map-wrapper').forEach(el => {
+        gsap.fromTo(el, {
+            y: 0
+        }, {
+            y: -10,
+            scrollTrigger: {
+                trigger: el,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 1.2,
+            }
+        });
+    });
+
+    // Stagger contact cards with GSAP for extra smoothness
+    gsap.fromTo('.contact-card', {
+        opacity: 0,
+        y: 40
+    }, {
+        opacity: 1,
+        y: 0,
+        stagger: 0.1,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+            trigger: '.contact-info-cards',
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+        }
+    });
+
+    /* ==========================================
+       6. FORM SUBMISSION HANDLER
+       ========================================== */
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Simple validation feedback
+        const inputs = contactForm.querySelectorAll('input[required], textarea[required]');
+        let valid = true;
+
+        inputs.forEach(input => {
+            if (!input.value.trim()) {
+                input.style.borderColor = '#EF4444';
+                valid = false;
+            } else {
+                input.style.borderColor = '';
+            }
+        });
+
+        if (valid) {
+            // Simulate submission
+            const btn = contactForm.querySelector('.btn-submit');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Sent Successfully!';
+                btn.style.background = '#22C55E';
+                btn.style.boxShadow = '0 10px 25px -5px rgba(34,197,94,0.4)';
+
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '';
+                    btn.style.boxShadow = '';
+                    btn.disabled = false;
+                    contactForm.reset();
+                }, 2500);
+            }, 1800);
+        }
+    });
+
+    // Remove error styling on focus
+    document.querySelectorAll('.form-group.floating input, .form-group.floating textarea').forEach(el => {
+        el.addEventListener('focus', () => {
+            el.style.borderColor = '';
+        });
+    });
+</script>
+
+</body>
+</html>

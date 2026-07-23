@@ -1,0 +1,2457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Kingdom Exim Pvt. Ltd. | Global Industrial Scrap & Metal Trading</title>
+    <meta name="description" content="Global leader in industrial scrap procurement, metal recycling, ferrous & non-ferrous trading, and international container logistics.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        /* ==========================================
+           1. CORE VARIABLES & RESET
+           ========================================== */
+        :root {
+            --primary: #2563EB;
+            --primary-dark: #1D4ED8;
+            --primary-glow: rgba(37, 99, 235, 0.35);
+            --secondary: #334155;
+            --emerald: #22C55E;
+            --emerald-glow: rgba(34, 197, 94, 0.35);
+            --copper: #D97706;
+            --bg-light: #FCFCFD;
+            --bg-alt: #F5F9FC;
+            --bg-highlight: #EEF6FF;
+            --dark-bg: #0B1120;
+            --dark-card: #1E293B;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --border-light: #E2E8F0;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 28px;
+            --shadow-subtle: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 20px 40px -15px rgba(37, 99, 235, 0.18);
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Custom Spotlight / Cursor Glow */
+        .cursor-glow {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s;
+        }
+
+        /* Global Background System Overlay */
+        .global-bg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.04;
+            background-image: 
+                radial-gradient(#2563EB 0.75px, transparent 0.75px),
+                linear-gradient(to right, #334155 1px, transparent 1px),
+                linear-gradient(to bottom, #334155 1px, transparent 1px);
+            background-size: 30px 30px, 90px 90px, 90px 90px;
+        }
+
+        /* Typography Utilities */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--text-main);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #2563EB 0%, #00D2FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-emerald {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-smooth);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Container Layout */
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #FFFFFF;
+            box-shadow: 0 10px 25px -5px var(--primary-glow);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px -5px rgba(37, 99, 235, 0.5);
+        }
+
+        .btn-glass {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: #FFFFFF;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-glass:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            color: #FFFFFF;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: #FFFFFF;
+            transform: translateY(-3px);
+        }
+
+        /* Section Header Layout */
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background: var(--bg-highlight);
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(37, 99, 235, 0.15);
+        }
+
+        .section-title {
+            font-size: 2.75rem;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.5px;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* ==========================================
+           2. NAVIGATION
+           ========================================== */
+        .navbar-wrapper {
+            position: fixed;
+            top: 20px;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: var(--transition-smooth);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 2rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 100px;
+            transition: var(--transition-smooth);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: var(--border-light);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 0.5rem 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: #FFFFFF;
+            transition: var(--transition-smooth);
+        }
+
+        .navbar.scrolled .logo-container {
+            color: var(--text-main);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: #FFFFFF;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            padding: 0.25rem 0;
+        }
+
+        .navbar.scrolled .nav-link {
+            color: var(--secondary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: #FFFFFF;
+        }
+
+        .navbar.scrolled .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+
+        .navbar.scrolled .mobile-toggle {
+            color: var(--text-main);
+        }
+
+        /* ==========================================
+           3. HERO SECTION
+           ========================================== */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 140px;
+            padding-bottom: 80px;
+            overflow: hidden;
+            background-image: url('images/hero.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: 
+                linear-gradient(90deg, rgba(15, 23, 42, 0.85) 0%, rgba(37, 99, 235, 0.45) 45%, rgba(0, 0, 0, 0.05) 100%),
+                linear-gradient(180deg, rgba(11, 17, 32, 0.4) 0%, transparent 40%, rgba(11, 17, 32, 0.7) 100%);
+            pointer-events: none;
+        }
+
+        .hero-fx {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            opacity: 0.05;
+            background-image: radial-gradient(#FFFFFF 1px, transparent 1px);
+            background-size: 24px 24px;
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            gap: 2rem;
+            align-items: center;
+            position: relative;
+            z-index: 3;
+            width: 100%;
+        }
+
+        .hero-content {
+            color: #FFFFFF;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.5rem 1.25rem;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .indicator-pulse {
+            width: 8px;
+            height: 8px;
+            background: var(--emerald);
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-desc {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            max-width: 540px;
+        }
+
+        .hero-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .floating-cards-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+            max-width: 520px;
+        }
+
+        .floating-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: var(--radius-md);
+            padding: 1.25rem 1.5rem;
+            color: #FFFFFF;
+            transition: var(--transition-smooth);
+            animation: float 6s ease-in-out infinite alternate;
+        }
+
+        .floating-card:nth-child(2) { animation-delay: -1.5s; }
+        .floating-card:nth-child(3) { animation-delay: -3s; }
+        .floating-card:nth-child(4) { animation-delay: -4.5s; }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-10px); }
+        }
+
+        .floating-card:hover {
+            background: rgba(255, 255, 255, 0.18);
+            border-color: var(--primary);
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        .card-stat-num {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 0.25rem;
+            color: #FFFFFF;
+        }
+
+        .card-stat-lbl {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.75);
+            font-weight: 500;
+        }
+
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .mouse-icon {
+            width: 22px;
+            height: 36px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .mouse-wheel {
+            width: 4px;
+            height: 8px;
+            background: #FFFFFF;
+            border-radius: 2px;
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scroll-wheel 1.5s infinite;
+        }
+
+        @keyframes scroll-wheel {
+            0% { opacity: 1; top: 6px; }
+            100% { opacity: 0; top: 20px; }
+        }
+
+        /* ==========================================
+           4. SECTION 2: GLOBAL INDUSTRIAL PRESENCE
+           ========================================== */
+        .global-presence-section {
+            background: var(--dark-bg);
+            color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-interactive-container {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            background: radial-gradient(circle at center, rgba(30, 41, 59, 0.8) 0%, rgba(11, 17, 32, 1) 100%);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .svg-world-map {
+            width: 85%;
+            height: auto;
+            opacity: 0.35;
+        }
+
+        .map-hotspot {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background: var(--primary);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .map-hotspot::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            animation: hotspot-pulse 2s infinite;
+        }
+
+        @keyframes hotspot-pulse {
+            0% { transform: scale(0.5); opacity: 1; }
+            100% { transform: scale(1.8); opacity: 0; }
+        }
+
+        .hotspot-1 { top: 35%; left: 25%; }
+        .hotspot-2 { top: 30%; left: 50%; }
+        .hotspot-3 { top: 48%; left: 72%; }
+        .hotspot-4 { top: 65%; left: 82%; }
+        .hotspot-5 { top: 68%; left: 32%; }
+
+        .presence-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .presence-stat-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition-smooth);
+        }
+
+        .presence-stat-box:hover {
+            border-color: var(--primary);
+            background: rgba(37, 99, 235, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .presence-num {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-heading);
+        }
+
+        /* ==========================================
+           5. SECTION 3: THE SCRAP TRANSFORMATION JOURNEY
+              (AUTOMATIC CONTINUOUS HORIZONTAL DOCUMENTARY CAROUSEL)
+           ========================================== */
+        .journey-section {
+            background: var(--bg-light);
+            position: relative;
+            overflow: hidden;
+            padding: 110px 0 90px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        /* Subtle Background FX (<5% Opacity) */
+        .journey-bg-blueprint {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.04;
+            background-image: 
+                linear-gradient(to right, #2563EB 1px, transparent 1px),
+                linear-gradient(to bottom, #2563EB 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .journey-bg-routes {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            transform: translateY(-50%);
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.05;
+        }
+
+        .journey-carousel-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0 40px 0;
+            cursor: grab;
+            user-select: none;
+            z-index: 2;
+        }
+
+        .journey-carousel-wrapper:active {
+            cursor: grabbing;
+        }
+
+        .journey-track {
+            display: flex;
+            gap: 2rem;
+            will-change: transform;
+            width: max-content;
+        }
+
+        /* Card Architecture */
+        .journey-card {
+            width: 420px;
+            height: 520px;
+            flex-shrink: 0;
+            background: #FFFFFF;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.5s ease, opacity 0.5s ease;
+            opacity: 0.75;
+            transform: scale(0.92);
+        }
+
+        /* Center-Focus Dynamic Scaling */
+        .journey-card.is-center {
+            opacity: 1;
+            transform: scale(1.03);
+            border-color: rgba(37, 99, 235, 0.4);
+            box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.2);
+            z-index: 5;
+        }
+
+        .journey-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--radius-lg);
+            padding: 2px;
+            background: linear-gradient(135deg, transparent, rgba(37, 99, 235, 0.5), transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .journey-card:hover::before, .journey-card.is-center::before {
+            opacity: 1;
+        }
+
+        /* Image Shell */
+        .journey-img-container {
+            position: relative;
+            width: 100%;
+            height: 270px;
+            overflow: hidden;
+            background: var(--dark-bg);
+        }
+
+        .journey-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .journey-card:hover .journey-img-container img {
+            transform: scale(1.08);
+        }
+
+        /* Glass Step Badge */
+        .journey-step-badge {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            background: rgba(11, 17, 32, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: #FFFFFF;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 3;
+        }
+
+        .journey-step-badge i {
+            color: var(--primary);
+        }
+
+        /* Card Body */
+        .journey-card-body {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+            background: #FFFFFF;
+        }
+
+        .journey-card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .journey-card-title i {
+            color: var(--primary);
+            font-size: 1.1rem;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: var(--transition-smooth);
+        }
+
+        .journey-card:hover .journey-card-title i {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .journey-card-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+
+        .journey-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 1.25rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-light);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Progress Bar Infrastructure */
+        .journey-progress-container {
+            max-width: 800px;
+            margin: 20px auto 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .journey-progress-track {
+            width: 100%;
+            height: 6px;
+            background: var(--border-light);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .journey-progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--primary) 0%, #00D2FF 100%);
+            border-radius: 10px;
+            transition: width 0.1s linear;
+        }
+
+        .journey-status-indicator {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .pause-notice {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            background: var(--bg-highlight);
+            color: var(--primary);
+            padding: 0.2rem 0.75rem;
+            border-radius: 50px;
+        }
+
+        /* ==========================================
+           6. SECTION 4: ABOUT PRIME KINGDOM
+           ========================================== */
+        .about-section {
+            background: var(--bg-light);
+            position: relative;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image-stack {
+            position: relative;
+        }
+
+        .about-main-img {
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-hover);
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+        }
+
+        .about-floating-stat {
+            position: absolute;
+            bottom: -30px;
+            right: -20px;
+            background: #FFFFFF;
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            border: 1px solid var(--border-light);
+            max-width: 240px;
+        }
+
+        .about-tabs-container {
+            margin-top: 2rem;
+        }
+
+        .about-tab-buttons {
+            display: flex;
+            gap: 1rem;
+            border-bottom: 2px solid var(--border-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.75rem 1rem;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .about-tab-btn.active {
+            color: var(--primary);
+        }
+
+        .about-tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .about-tab-content {
+            display: none;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .about-tab-content.active {
+            display: block;
+        }
+
+        /* ==========================================
+           7. SECTION 5: FEATURED MATERIALS SHOWCASE
+           ========================================== */
+        .materials-section {
+            background: var(--bg-alt);
+        }
+
+        .material-interactive-viewer {
+            background: #FFFFFF;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-subtle);
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            min-height: 550px;
+            overflow: hidden;
+        }
+
+        .material-selector-sidebar {
+            background: var(--bg-highlight);
+            border-right: 1px solid var(--border-light);
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .material-select-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            padding: 1.25rem 1.5rem;
+            border-radius: var(--radius-md);
+            text-align: left;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--secondary);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .material-select-btn:hover {
+            background: #FFFFFF;
+        }
+
+        .material-select-btn.active {
+            background: #FFFFFF;
+            color: var(--primary);
+            border-color: rgba(37, 99, 235, 0.2);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+        }
+
+        .material-display-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 3rem;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .material-display-img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .material-specs-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .material-specs-list li {
+            padding: 0.6rem 0;
+            border-bottom: 1px dashed var(--border-light);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+        }
+
+        .spec-label { color: var(--text-muted); }
+        .spec-val { font-weight: 600; color: var(--text-main); }
+
+        /* ==========================================
+           8. SECTION 6: WHY CHOOSE US
+           ========================================== */
+        .why-us-section {
+            background: var(--bg-light);
+        }
+
+        .asymmetric-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.75rem;
+        }
+
+        .why-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 2.5rem 2rem;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-card.large-card {
+            grid-column: span 2;
+            background: linear-gradient(135deg, #0B1120 0%, #1E293B 100%);
+            color: #FFFFFF;
+        }
+
+        .why-card.large-card .why-desc {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .why-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary);
+        }
+
+        .why-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            background: var(--bg-highlight);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .why-card.large-card .why-icon {
+            background: rgba(255, 255, 255, 0.1);
+            color: #FFFFFF;
+        }
+
+        .why-card:hover .why-icon {
+            background: var(--primary);
+            color: #FFFFFF;
+            transform: rotateY(180deg);
+        }
+
+        .why-title {
+            font-size: 1.35rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .why-desc {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.65;
+        }
+
+        /* ==========================================
+           9. SECTION 7: LOGISTICS CONTROL CENTER
+           ========================================== */
+        .logistics-section {
+            background: var(--dark-bg);
+            color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logistics-bg-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.2;
+            filter: grayscale(80%);
+        }
+
+        .logistics-dashboard-card {
+            position: relative;
+            z-index: 2;
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-lg);
+            padding: 3.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .logistics-features-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .logistics-features-list li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+        }
+
+        .logistics-features-list i {
+            color: var(--emerald);
+        }
+
+        /* ==========================================
+           10. SECTION 8: SUSTAINABILITY
+           ========================================== */
+        .sustainability-section {
+            background: linear-gradient(180deg, #F0FDF4 0%, #FFFFFF 100%);
+            position: relative;
+        }
+
+        .sustainability-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .eco-metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .eco-metric-card {
+            background: #FFFFFF;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.05);
+        }
+
+        .eco-metric-val {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--emerald);
+            margin-bottom: 0.25rem;
+        }
+
+        /* ==========================================
+           11. SECTION 9: INDUSTRIES SERVED
+           ========================================== */
+        .industries-section {
+            background: var(--bg-light);
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .industry-card {
+            position: relative;
+            height: 320px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .industry-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .industry-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(11, 17, 32, 0.85) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.75rem;
+            color: #FFFFFF;
+            transition: var(--transition-smooth);
+        }
+
+        .industry-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .industry-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.25rem;
+        }
+
+        /* ==========================================
+           12. SECTION 10: CLIENT SUCCESS & TESTIMONIALS
+           ========================================== */
+        .testimonials-section {
+            background: var(--bg-alt);
+        }
+
+        .testimonial-card-glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-subtle);
+            text-align: center;
+        }
+
+        .quote-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            opacity: 0.3;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-quote {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            font-style: italic;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+        }
+
+        .client-profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .client-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* ==========================================
+           13. SECTION 11: METRICS & STATS COUNTER
+           ========================================== */
+        .counter-section {
+            background: var(--primary-dark);
+            color: #FFFFFF;
+            padding: 80px 0;
+        }
+
+        .counters-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .counter-number {
+            font-family: var(--font-heading);
+            font-size: 3.25rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .counter-label {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ==========================================
+           14. SECTION 12: CALL TO ACTION
+           ========================================== */
+        .cta-section {
+            background: linear-gradient(135deg, #0B1120 0%, #1E293B 100%);
+            color: #FFFFFF;
+            padding: 120px 0;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-title {
+            font-size: 3.25rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.15;
+        }
+
+        /* ==========================================
+           15. FOOTER
+           ========================================== */
+        .footer {
+            background: #070B14;
+            color: rgba(255, 255, 255, 0.65);
+            padding-top: 80px;
+            padding-bottom: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(4, 1fr);
+            gap: 3rem;
+            margin-bottom: 60px;
+        }
+
+        .footer-title {
+            color: #FFFFFF;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.85rem;
+        }
+
+        .footer-links a:hover {
+            color: #FFFFFF;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.85rem;
+        }
+
+        /* ==========================================
+           16. RESPONSIVE MEDIA QUERIES
+           ========================================== */
+        @media (max-width: 1200px) {
+            .hero-title { font-size: 3rem; }
+            .hero-grid { grid-template-columns: 1fr; }
+            .asymmetric-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-card.large-card { grid-column: span 2; }
+            .industries-grid { grid-template-columns: repeat(2, 1fr); }
+            .counters-grid { grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+            .journey-card { width: 380px; height: 500px; }
+        }
+
+        @media (max-width: 992px) {
+            .nav-menu, .nav-cta { display: none; }
+            .mobile-toggle { display: block; }
+            .about-grid, .sustainability-grid, .logistics-dashboard-card, .material-interactive-viewer {
+                grid-template-columns: 1fr;
+            }
+            .presence-stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .hero-title { font-size: 2.5rem; }
+            .section-title { font-size: 2.25rem; }
+            .journey-card { width: 340px; height: 480px; }
+        }
+
+        @media (max-width: 600px) {
+            .floating-cards-container { grid-template-columns: 1fr; }
+            .asymmetric-grid { grid-template-columns: 1fr; }
+            .why-card.large-card { grid-column: span 1; }
+            .industries-grid { grid-template-columns: 1fr; }
+            .counters-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero-btn-group { flex-direction: column; align-items: stretch; }
+            .btn { width: 100%; }
+            .journey-card { width: 300px; height: 460px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mouse Pointer Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Global Background Mesh System -->
+    <div class="global-bg-overlay"></div>
+
+    <!-- NAVIGATION -->
+    <div class="navbar-wrapper">
+        <div class="container">
+            <nav class="navbar" id="navbar">
+                <a href="index.html" class="logo-container">
+                    <div class="logo-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <span>PRIME KINGDOM</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#journey" class="nav-link">Services</a></li>
+                    <li><a href="#materials" class="nav-link">Materials</a></li>
+                    <li><a href="#industries" class="nav-link">Industries</a></li>
+                    <li><a href="#sustainability" class="nav-link">Sustainability</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Request Quote</a>
+                </div>
+                <button class="mobile-toggle" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- SECTION 1: HERO -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-fx"></div>
+        
+        <div class="container">
+            <div class="hero-grid">
+                <!-- Left Column Content (40%) -->
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="indicator-pulse"></span>
+                        <span>Trusted Industrial Scrap Trading Company</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        Transforming Industrial Scrap Into <span class="text-gradient">Sustainable Global Resources</span>
+                    </h1>
+                    
+                    <p class="hero-desc">
+                        Prime Kingdom Exim Pvt. Ltd. delivers premium industrial scrap procurement, responsible recycling, transportation, and international metal trading solutions for manufacturers and industrial partners worldwide.
+                    </p>
+                    
+                    <div class="hero-btn-group">
+                        <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-file-contract"></i> Request Quote</a>
+                        <a href="#materials" class="btn btn-glass"><i class="fa-solid fa-cubes"></i> Explore Materials</a>
+                    </div>
+
+                    <!-- Floating Glass Cards Sub-Grid -->
+                    <div class="floating-cards-container">
+                        <div class="floating-card">
+                            <div class="card-stat-num">50+</div>
+                            <div class="card-stat-lbl">Global Clients</div>
+                        </div>
+                        <div class="floating-card">
+                            <div class="card-stat-num">1000+</div>
+                            <div class="card-stat-lbl">MT Processed</div>
+                        </div>
+                        <div class="floating-card">
+                            <div class="card-stat-num">Global</div>
+                            <div class="card-stat-lbl">Trade Network</div>
+                        </div>
+                        <div class="floating-card">
+                            <div class="card-stat-num">100%</div>
+                            <div class="card-stat-lbl">Quality Commitment</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column (60%) -->
+                <div></div>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator">
+            <div class="mouse-icon">
+                <div class="mouse-wheel"></div>
+            </div>
+            <span>SCROLL TO EXPLORE</span>
+        </div>
+    </section>
+
+    <!-- SECTION 2: GLOBAL INDUSTRIAL PRESENCE -->
+    <!-- <section class="global-presence-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fa-solid fa-earth-americas"></i> International Reach</span>
+                <h2 class="section-title text-gradient">Global Industrial Presence</h2>
+                <p class="section-desc">Operating at the intersection of international trade logistics, processing raw industrial commodities seamlessly across major global shipping lanes.</p>
+            </div>
+
+            <div class="map-interactive-container">
+                <svg class="svg-world-map" viewBox="0 0 1000 500" fill="#334155" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M150,150 Q200,100 250,150 T350,150 Q400,200 450,150 T650,200 Q750,100 850,200 T950,300 Q800,400 700,350 T500,450 Q300,400 200,300 Z" opacity="0.2"/>
+                    <circle cx="250" cy="180" r="100" fill="rgba(255,255,255,0.03)"/>
+                    <circle cx="500" cy="160" r="110" fill="rgba(255,255,255,0.03)"/>
+                    <circle cx="750" cy="220" r="120" fill="rgba(255,255,255,0.03)"/>
+                </svg>
+
+                <div class="map-hotspot hotspot-1" title="North America Operations"></div>
+                <div class="map-hotspot hotspot-2" title="European Logistics Hub"></div>
+                <div class="map-hotspot hotspot-3" title="Asia-Pacific Headquarters"></div>
+                <div class="map-hotspot hotspot-4" title="Oceania Trade Routes"></div>
+                <div class="map-hotspot hotspot-5" title="Latin America Procurement"></div>
+            </div>
+
+            <div class="presence-stats-grid">
+                <div class="presence-stat-box">
+                    <div class="presence-num">35+</div>
+                    <div style="color: rgba(255,255,255,0.7); font-size:0.9rem;">Countries Served</div>
+                </div>
+                <div class="presence-stat-box">
+                    <div class="presence-num">120+</div>
+                    <div style="color: rgba(255,255,255,0.7); font-size:0.9rem;">Export Destinations</div>
+                </div>
+                <div class="presence-stat-box">
+                    <div class="presence-num">250+</div>
+                    <div style="color: rgba(255,255,255,0.7); font-size:0.9rem;">Industrial Partners</div>
+                </div>
+                <div class="presence-stat-box">
+                    <div class="presence-num">4,500+</div>
+                    <div style="color: rgba(255,255,255,0.7); font-size:0.9rem;">Annual Container Shipments</div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- SECTION 3: THE SCRAP TRANSFORMATION JOURNEY 
+         (CONTINUOUS AUTOPLAYING HORIZONTAL DOCUMENTARY CAROUSEL) -->
+    <section class="journey-section" id="journey">
+        <div class="journey-bg-blueprint"></div>
+        <svg class="journey-bg-routes" viewBox="0 0 1400 200" fill="none" stroke="#2563EB" stroke-width="1.5">
+            <path d="M0 100 Q 350 20, 700 100 T 1400 100" stroke-dasharray="8 8"/>
+        </svg>
+
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fa-solid fa-timeline"></i> Step-by-Step Lifecycle</span>
+                <h2 class="section-title">The Scrap Transformation Journey</h2>
+                <p class="section-desc">Follow the complete lifecycle of industrial scrap—from procurement and inspection to advanced recycling, logistics, and international delivery.</p>
+            </div>
+        </div>
+
+        <!-- Infinite Loop Track Container -->
+        <div class="journey-carousel-wrapper" id="journeyWrapper">
+            <div class="journey-track" id="journeyTrack">
+                
+                <!-- Step 01 -->
+                <div class="journey-card" data-step="1">
+                    <div class="journey-img-container">
+                        <span class="journey-step-badge"><i class="fa-solid fa-industry"></i> 01 / 09</span>
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" alt="Industrial Scrap Collection">
+                    </div>
+                    <div class="journey-card-body">
+                        <div>
+                            <h3 class="journey-card-title">Industrial Scrap Collection <i class="fa-solid fa-arrow-right"></i></h3>
+                            <p class="journey-card-desc">Direct procurement from manufacturing plants, heavy machinery sites, and demolition projects using heavy fleet logistics.</p>
+                        </div>
+                        <div class="journey-card-footer">
+                            <span>Stage 01</span>
+                            <span style="color:var(--primary);">Procurement</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 02 -->
+                <div class="journey-card" data-step="2">
+                    <div class="journey-img-container">
+                        <span class="journey-step-badge"><i class="fa-solid fa-magnifying-glass-chart"></i> 02 / 09</span>
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop" alt="Material Inspection">
+                    </div>
+                    <div class="journey-card-body">
+                        <div>
+                            <h3 class="journey-card-title">Material Inspection <i class="fa-solid fa-arrow-right"></i></h3>
+                            <p class="journey-card-desc">Rigorous alloy verification with handheld optical emission spectro-analyzers to verify chemical grade consistency.</p>
+                        </div>
+                        <div class="journey-card-footer">
+                            <span>Stage 02</span>
+                            <span style="color:var(--primary);">Verification</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 03 -->
+                <div class="journey-card" data-step="3">
+                    <div class="journey-img-container">
+                        <span class="journey-step-badge"><i class="fa-solid fa-layer-group"></i> 03 / 09</span>
+                        <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=800&auto=format&fit=crop" alt="Sorting & Segregation">
+                    </div>
+                    <div class="journey-card-body">
+                        <div>
+                            <h3 class="journey-card-title">Sorting & Segregation <i class="fa-solid fa-arrow-right"></i></h3>
+                            <p class="journey-card-desc">Automated electromagnetic and manual separation segregating ferrous metals from copper, aluminium, and brass alloys.</p>
+                        </div>
+                        <div class="journey-card-footer">
+                            <span>Stage 03</span>
+                            <span style="color:var(--primary);">Segregation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 04 -->
+                <div class="journey-card" data-step="4">
+                    <div class="journey-img-container">
+                        <span class="journey-step-badge"><i class="fa-solid fa-gears"></i> 04 / 09</span>
+                        <img src="https://images.unsplash.com/photo-1618042164219-62c820f10723?q=80&w=800&auto=format&fit=crop" alt="Advanced Processing">
+                    </div>
+                    <div class="journey-card-body">
+                        <div>
+                            <h3 class="journey-card-title">Advanced Processing <i class="fa-solid fa-arrow-right"></i></h3>
+                            <p class="journey-card-desc">Hydraulic baling, shredding, and high-capacity cutting to transform bulky raw scrap into compact, furnace-ready units.</p>
+                        </div>
+                        <div class="journey-card-footer">
+                            <span>Stage 04</span>
+                            <span style="color:var(--primary);">Processing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 05 -->
+                <div class="journey-card" data-step="5">
+                    <div class="journey-img-container">
+                        <span class="journey-step-badge"><i class="fa-solid fa-shield-virus"></i> 05 / 09</span>
+                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?q=80&w=800&auto=format&fit=crop" alt="Quality Assurance">
+                    </div>
+                    <div class="journey-card-body">
+                        <div>
+                            <h3 class="journey-card-title">Quality Assurance <i class="fa-solid fa-arrow-right"></i></h3>
+                            <p class="journey-card-desc">Comprehensive laboratory testing for zero radiation, moisture thresholds, and strict compliance with ISRI standards.</p>
+                        </div>
+                        <div class="journey-card-footer">
+                            <span>Stage 05</span>
+                            <span style="color:var(--primary);">Compliance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 06 -->
+                <div class="journey-card" data-step="6">
+                    <div class="journey-img-container">
+                        <span class="journey-step-badge"><i class="fa-solid fa-box-archive"></i> 06 / 09</span>
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" alt="Industrial Packaging">
+                    </div>
+                    <div class="journey-card-body">
+                        <div>
+                            <h3 class="journey-card-title">Industrial Packaging <i class="fa-solid fa-arrow-right"></i></h3>
+                            <p class="journey-card-desc">High-tension steel strapping, palletization, and bulk wrapping tailored to optimize maritime container payload limits.</p>
+                        </div>
+                        <div class="journey-card-footer">
+                            <span>Stage 06</span>
+                            <span style="color:var(--primary);">Packaging</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 07 -->
+                <div class="journey-card" data-step="7">
+                    <div class="journey-img-container">
+                        <span class="journey-step-badge"><i class="fa-solid fa-truck-ramp-box"></i> 07 / 09</span>
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop" alt="Internal Logistics">
+                    </div>
+                    <div class="journey-card-body">
+                        <div>
+                            <h3 class="journey-card-title">Internal Transportation <i class="fa-solid fa-arrow-right"></i></h3>
+                            <p class="journey-card-desc">Precision loading using heavy forklifts and container handlers for rapid inland transport to port terminals.</p>
+                        </div>
+                        <div class="journey-card-footer">
+                            <span>Stage 07</span>
+                            <span style="color:var(--primary);">Transit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 08 -->
+                <div class="journey-card" data-step="8">
+                    <div class="journey-img-container">
+                        <span class="journey-step-badge"><i class="fa-solid fa-ship"></i> 08 / 09</span>
+                        <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=800&auto=format&fit=crop" alt="Global Logistics">
+                    </div>
+                    <div class="journey-card-body">
+                        <div>
+                            <h3 class="journey-card-title">Global Ocean Logistics <i class="fa-solid fa-arrow-right"></i></h3>
+                            <p class="journey-card-desc">Customs documentation, ocean liner freight booking, and real-time container tracking across international waters.</p>
+                        </div>
+                        <div class="journey-card-footer">
+                            <span>Stage 08</span>
+                            <span style="color:var(--primary);">Export</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 09 -->
+                <div class="journey-card" data-step="9">
+                    <div class="journey-img-container">
+                        <span class="journey-step-badge"><i class="fa-solid fa-recycle"></i> 09 / 09</span>
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=800&auto=format&fit=crop" alt="Industrial Reuse">
+                    </div>
+                    <div class="journey-card-body">
+                        <div>
+                            <h3 class="journey-card-title">Industrial Reuse <i class="fa-solid fa-arrow-right"></i></h3>
+                            <p class="journey-card-desc">Final delivery to partner foundries and steel mills for re-melting into new high-value industrial materials.</p>
+                        </div>
+                        <div class="journey-card-footer">
+                            <span>Stage 09</span>
+                            <span style="color:var(--emerald);">Circular Output</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div class="container">
+            <div class="journey-progress-container">
+                <div class="journey-progress-track" id="progressTrack">
+                    <div class="journey-progress-fill" id="progressFill"></div>
+                </div>
+                <div class="journey-status-indicator">
+                    <span id="journeyStatusText"><i class="fa-solid fa-circle-play text-gradient"></i> Auto-playing Timeline</span>
+                    <span id="pauseNotice" class="pause-notice" style="opacity: 0;"><i class="fa-solid fa-pause"></i> Hovered / Dragging to Inspect</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: ABOUT PRIME KINGDOM -->
+    <section class="about-section section-padding" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-stack">
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1000&auto=format&fit=crop" alt="Metal Manufacturing Plant" class="about-main-img">
+                    <div class="about-floating-stat">
+                        <div style="font-size: 2rem; font-weight:800; color:var(--primary); font-family:var(--font-heading);">15+ Years</div>
+                        <div style="font-size: 0.85rem; color:var(--text-muted); font-weight:500;">Engineering & Trading Excellence</div>
+                    </div>
+                </div>
+
+                <div class="about-text-wrapper">
+                    <span class="section-tag"><i class="fa-solid fa-building"></i> Corporate Profile</span>
+                    <h2 class="section-title">Pioneering Circular Metal Economy Engineering</h2>
+                    <p class="section-desc" style="margin-bottom: 1.5rem;">
+                        Prime Kingdom Exim Pvt. Ltd. stands as an institutional pillar in international scrap metal procurement, sorting, and global export infrastructure. We bridge heavy industrial manufacturers with end-use metal smelters around the globe.
+                    </p>
+
+                    <div class="about-tabs-container">
+                        <div class="about-tab-buttons">
+                            <button class="about-tab-btn active" onclick="switchTab(event, 'mission')">Mission</button>
+                            <button class="about-tab-btn" onclick="switchTab(event, 'vision')">Vision</button>
+                            <button class="about-tab-btn" onclick="switchTab(event, 'values')">Core Values</button>
+                        </div>
+                        <div id="mission" class="about-tab-content active">
+                            To empower global industrial supply chains by supplying premium, verified secondary metallic raw materials while driving environmental sustainability through zero-landfill scrap recycling initiatives.
+                        </div>
+                        <div id="vision" class="about-tab-content">
+                            To become the world's most trusted, technologically integrated, and carbon-neutral industrial metal recycling and supply chain enterprise by 2030.
+                        </div>
+                        <div id="values" class="about-tab-content">
+                            Unwavering integrity, operational precision, environmental stewardship, client-centric transparency, and safety compliance across every link in our value chain.
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <a href="#contact" class="btn btn-outline">Learn More About Our Governance</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: FEATURED MATERIALS SHOWCASE -->
+    <section class="materials-section section-padding" id="materials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fa-solid fa-layer-group"></i> Material Commodities</span>
+                <h2 class="section-title">Featured Industrial Materials</h2>
+                <p class="section-desc">Select a raw material grade below to inspect technical specifications, typical applications, and chemical composition guidelines.</p>
+            </div>
+
+            <div class="material-interactive-viewer">
+                <div class="material-selector-sidebar">
+                    <button class="material-select-btn active" onclick="changeMaterial('alu6063', this)">
+                        <span>Aluminium 6063</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                    <button class="material-select-btn" onclick="changeMaterial('alu6061', this)">
+                        <span>Aluminium 6061</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                    <button class="material-select-btn" onclick="changeMaterial('steelScrap', this)">
+                        <span>Steel Scrap (HMS 1&2)</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                    <button class="material-select-btn" onclick="changeMaterial('copperScrap', this)">
+                        <span>Copper Scrap (Birch/Cliff)</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="material-display-body" id="materialDisplay">
+                    <div>
+                        <img id="matImg" src="https://images.unsplash.com/photo-1605557202138-097824c3f8c4?q=80&w=800&auto=format&fit=crop" alt="Aluminium 6063" class="material-display-img">
+                    </div>
+                    <div>
+                        <h3 id="matTitle" style="font-size:1.8rem; margin-bottom:0.5rem;">Aluminium Scrap 6063 Extrusions</h3>
+                        <p id="matDesc" style="color:var(--text-muted); font-size:0.95rem;">Clean architectural aluminium extrusions, free of iron, zinc, plastic, and heavy oil contamination. High purity for extrusion re-melting.</p>
+
+                        <ul class="material-specs-list">
+                            <li><span class="spec-label">Metallic Purity</span><span class="spec-val" id="specPurity">98.5% Minimum</span></li>
+                            <li><span class="spec-label">ISRI Code</span><span class="spec-val" id="specISRI">Tabor / Taint</span></li>
+                            <li><span class="spec-label">Primary Industry</span><span class="spec-val" id="specIndustry">Architectural & Automotive</span></li>
+                            <li><span class="spec-label">Moisture / Attachments</span><span class="spec-val" id="specMoisture">< 0.5%</span></li>
+                        </ul>
+
+                        <a href="#contact" class="btn btn-primary" style="padding:0.6rem 1.25rem; font-size:0.85rem;">Request Material Spec Sheet</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: WHY CHOOSE US -->
+    <section class="why-us-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fa-solid fa-shield-halved"></i> Institutional Advantages</span>
+                <h2 class="section-title">Why Global Partners Choose Prime Kingdom</h2>
+                <p class="section-desc">Delivering operational risk mitigation, superior financial liquidity, and reliable industrial volume delivery.</p>
+            </div>
+
+            <div class="asymmetric-grid">
+                <div class="why-card large-card">
+                    <div class="why-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <h3 class="why-title">Industry-Leading Spectro Analysis & QA</h3>
+                    <p class="why-desc">We utilize X-ray fluorescence (XRF) testing on 100% of incoming and outgoing consignments. Our precise quality control guarantees zero chemical discrepancies upon discharge at your furnace facilities.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-route"></i></div>
+                    <h3 class="why-title">Global Intermodal Logistics</h3>
+                    <p class="why-desc">End-to-end container tracking, optimized vessel booking, and expedited customs clearing.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-coins"></i></div>
+                    <h3 class="why-title">Competitive Commodity Pricing</h3>
+                    <p class="why-desc">Direct LME market index linkage providing fair, transparent, and hedgeable pricing models.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <h3 class="why-title">Sustainable Circular Lifecycle</h3>
+                    <p class="why-desc">Full compliance with global ESG standards and ISO 14001 environmental management frameworks.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h3 class="why-title">Reliable High-Volume Supply</h3>
+                    <p class="why-desc">Multi-thousand metric ton monthly capacity ensuring zero industrial production downtime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: LOGISTICS CONTROL CENTER -->
+    <section class="logistics-section section-padding">
+        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=2070&auto=format&fit=crop" alt="Container Shipping Port" class="logistics-bg-img">
+        <div class="container">
+            <div class="logistics-dashboard-card">
+                <div>
+                    <span class="section-tag" style="background:rgba(255,255,255,0.1); color:#FFFFFF; border-color:rgba(255,255,255,0.2);"><i class="fa-solid fa-truck-fast"></i> Logistics Control Center</span>
+                    <h2 style="font-size:2.5rem; color:#FFFFFF; margin: 1rem 0;">Precision Supply Chain Command</h2>
+                    <p style="color:rgba(255,255,255,0.8); font-size:1.05rem;">
+                        Our centralized control hub coordinates multi-port vessel operations, container drayage, and inland freight seamlessly across international ocean routes.
+                    </p>
+                    <ul class="logistics-features-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Real-time GPS container vessel tracking</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Certified export weight verification (VGM)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Comprehensive customs compliance clearance</li>
+                    </ul>
+                </div>
+                <div style="background:rgba(15, 23, 42, 0.8); padding:2rem; border-radius:var(--radius-md); border:1px solid rgba(255,255,255,0.1);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:1rem;">
+                        <span style="font-weight:600;"><i class="fa-solid fa-ship" style="color:var(--primary); margin-right:8px;"></i> Live Shipment Stream</span>
+                        <span style="font-size:0.8rem; background:var(--emerald); color:#FFF; padding:2px 8px; border-radius:10px;">ACTIVE</span>
+                    </div>
+                    <div style="font-size:0.9rem; color:rgba(255,255,255,0.7); line-height:1.8;">
+                        <div style="display:flex; justify-content:space-between;"><span>Vessel IMO 984321</span><span>Port of Singapore &rarr; Rotterdam</span></div>
+                        <div style="display:flex; justify-content:space-between;"><span>Cargo: Heavy Melting Steel</span><span>240 Containers (5,800 MT)</span></div>
+                        <div style="display:flex; justify-content:space-between;"><span>Status: In Transit</span><span>ETA: 3 Days</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: SUSTAINABILITY -->
+    <section class="sustainability-section section-padding" id="sustainability">
+        <div class="container">
+            <div class="sustainability-grid">
+                <div>
+                    <span class="section-tag" style="background:#DCFCE7; color:var(--emerald); border-color:rgba(34,197,94,0.3);"><i class="fa-solid fa-leaf"></i> Eco Leadership</span>
+                    <h2 class="section-title text-gradient-emerald">Driving the Decarbonization of Heavy Metal Production</h2>
+                    <p class="section-desc">
+                        Recycling scrap metal uses up to 95% less energy than producing primary metals from virgin ore. Prime Kingdom is dedicated to drastically reducing global industrial CO₂ emissions.
+                    </p>
+
+                    <div class="eco-metrics-grid">
+                        <div class="eco-metric-card">
+                            <div class="eco-metric-val">95%</div>
+                            <div style="font-size:0.85rem; color:var(--text-muted);">Energy Saved vs. Primary Mining</div>
+                        </div>
+                        <div class="eco-metric-card">
+                            <div class="eco-metric-val">-2.5T</div>
+                            <div style="font-size:0.85rem; color:var(--text-muted);">CO₂ Reduced per Ton of Recycled Steel</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="position:relative;">
+                    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=800&auto=format&fit=crop" alt="Sustainable Recycling Facility" style="border-radius:var(--radius-lg); width:100%; height:450px; object-fit:cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: INDUSTRIES SERVED -->
+    <section class="industries-section section-padding" id="industries">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fa-solid fa-industry"></i> Sector Solutions</span>
+                <h2 class="section-title">Industries We Serve Worldwide</h2>
+                <p class="section-desc">Tailored commodity supply agreements structured for high-volume industrial consumers.</p>
+            </div>
+
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?q=80&w=600&auto=format&fit=crop" alt="Construction">
+                    <div class="industry-overlay">
+                        <h3 class="industry-title">Construction & Infra</h3>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=600&auto=format&fit=crop" alt="Steel Plants">
+                    <div class="industry-overlay">
+                        <h3 class="industry-title">Steel Mills & Foundries</h3>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=600&auto=format&fit=crop" alt="Automotive">
+                    <div class="industry-overlay">
+                        <h3 class="industry-title">Automotive Manufacturing</h3>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=600&auto=format&fit=crop" alt="Marine Engineering">
+                    <div class="industry-overlay">
+                        <h3 class="industry-title">Marine & Ship Building</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 10: CLIENT SUCCESS & TESTIMONIALS -->
+    <section class="testimonials-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fa-solid fa-quote-left"></i> Testimonials</span>
+                <h2 class="section-title">Trusted by Global Industry Leaders</h2>
+            </div>
+
+            <div class="testimonial-card-glass">
+                <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                <p class="testimonial-quote">
+                    "Prime Kingdom Exim has consistently met our stringent material chemistry requirements for our electric arc furnaces. Their consistency in volume delivery and transparent pricing make them an indispensable international partner."
+                </p>
+                <div class="client-profile">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" alt="Client CEO" class="client-avatar">
+                    <div style="text-align:left;">
+                        <h4 style="font-size:1.1rem;">Marcus Vance</h4>
+                        <p style="font-size:0.85rem; color:var(--text-muted);">VP of Procurement, EuroSteel Smelting Corp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 11: STATISTICS COUNTER -->
+    <section class="counter-section">
+        <div class="container">
+            <div class="counters-grid">
+                <div>
+                    <div class="counter-number" data-target="500">0</div>
+                    <div class="counter-label">Global Clients</div>
+                </div>
+                <div>
+                    <div class="counter-number" data-target="35">0</div>
+                    <div class="counter-label">Countries Served</div>
+                </div>
+                <div>
+                    <div class="counter-number" data-target="4500">0</div>
+                    <div class="counter-label">Containers / Yr</div>
+                </div>
+                <div>
+                    <div class="counter-number" data-target="100000">0</div>
+                    <div class="counter-label">MT Processed</div>
+                </div>
+                <div>
+                    <div class="counter-number" data-target="15">0</div>
+                    <div class="counter-label">Years Operating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 12: CALL TO ACTION -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <span class="section-tag" style="background:rgba(255,255,255,0.1); color:#FFFFFF; border-color:rgba(255,255,255,0.2);"><i class="fa-solid fa-handshake"></i> Partner With Us</span>
+                <h2 class="cta-title">Let's Build Sustainable Industrial Partnerships Together</h2>
+                <p style="font-size:1.15rem; color:rgba(255,255,255,0.8); margin-bottom:2.5rem;">
+                    Contact our international trading desk today to request bulk metal specifications, pricing indices, or custom procurement contracts.
+                </p>
+                <div style="display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap;">
+                    <a href="mailto:info@primekingdomexim.com" class="btn btn-primary" style="padding:1.1rem 2.5rem; font-size:1rem;"><i class="fa-solid fa-envelope"></i> Request Official Quote</a>
+                    <a href="tel:+1234567890" class="btn btn-glass" style="padding:1.1rem 2.5rem; font-size:1rem;"><i class="fa-solid fa-phone"></i> Speak With Trading Desk</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo-container" style="color:#FFF; margin-bottom:1.25rem;">
+                        <div class="logo-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                        <span>PRIME KINGDOM</span>
+                    </div>
+                    <p style="margin-bottom:1.5rem; line-height:1.7;">
+                        Prime Kingdom Exim Pvt. Ltd. is a premier global enterprise specializing in industrial scrap procurement, sustainable recycling, metal trading, and containerized logistics.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#journey">The Scrap Journey</a></li>
+                        <li><a href="#sustainability">Sustainability</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Materials</h4>
+                    <ul class="footer-links">
+                        <li><a href="#materials">Aluminium 6063</a></li>
+                        <li><a href="#materials">Aluminium 6061</a></li>
+                        <li><a href="#materials">Heavy Melting Steel</a></li>
+                        <li><a href="#materials">Copper Birch / Cliff</a></li>
+                        <li><a href="#materials">Stainless Steel Scrap</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Industries</h4>
+                    <ul class="footer-links">
+                        <li><a href="#industries">Construction</a></li>
+                        <li><a href="#industries">Foundries & Smelters</a></li>
+                        <li><a href="#industries">Automotive Supply</a></li>
+                        <li><a href="#industries">Marine Engineering</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links" style="font-size:0.9rem;">
+                        <li><i class="fa-solid fa-location-dot" style="color:var(--primary); margin-right:8px;"></i> Corporate HQ, Trade Tower, Suite 1200</li>
+                        <li><i class="fa-solid fa-envelope" style="color:var(--primary); margin-right:8px;"></i> info@primekingdomexim.com</li>
+                        <li><i class="fa-solid fa-phone" style="color:var(--primary); margin-right:8px;"></i> +1 (800) 555-EXIM</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 Prime Kingdom Exim Pvt. Ltd. All Rights Reserved.</div>
+                <div style="display:flex; gap:1.5rem;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Compliance Certification</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT SYSTEM -->
+    <script>
+        /* ==========================================
+           1. MOUSE SPOTLIGHT / CURSOR GLOW
+           ========================================== */
+        const cursorGlow = document.getElementById('cursorGlow');
+        document.addEventListener('mousemove', (e) => {
+            cursorGlow.style.left = e.clientX + 'px';
+            cursorGlow.style.top = e.clientY + 'px';
+        });
+
+        /* ==========================================
+           2. NAVBAR SCROLL EFFECT
+           ========================================== */
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        /* ==========================================
+           3. SECTION 3: CONTINUOUS AUTO-PLAYING HORIZONTAL JOURNEY
+           ========================================== */
+        (function initContinuousJourney() {
+            const wrapper = document.getElementById('journeyWrapper');
+            const track = document.getElementById('journeyTrack');
+            const progressFill = document.getElementById('progressFill');
+            const pauseNotice = document.getElementById('pauseNotice');
+
+            if (!wrapper || !track) return;
+
+            // Seamless Duplication for Infinite Seamless Loop
+            const originalCards = Array.from(track.children);
+            originalCards.forEach(card => {
+                const clone = card.cloneNode(true);
+                clone.setAttribute('data-clone', 'true');
+                track.appendChild(clone);
+            });
+
+            let currentX = 0;
+            let speed = 0.8; // Smooth 28-30s cycle
+            let isPaused = false;
+            let isDragging = false;
+            let startX = 0;
+            let dragStartX = 0;
+            let animationFrameId;
+
+            // Get total width of 1 complete set of 9 cards including gaps
+            function getSingleSetWidth() {
+                let width = 0;
+                for (let i = 0; i < originalCards.length; i++) {
+                    const style = window.getComputedStyle(originalCards[i]);
+                    const gap = parseFloat(window.getComputedStyle(track).gap) || 32;
+                    width += originalCards[i].offsetWidth + gap;
+                }
+                return width;
+            }
+
+            let singleSetWidth = getSingleSetWidth();
+            window.addEventListener('resize', () => {
+                singleSetWidth = getSingleSetWidth();
+            });
+
+            // Center Viewport Scale Highlight Effect
+            function updateCenterCardHighlight() {
+                const viewportCenter = window.innerWidth / 2;
+                const allCards = track.children;
+
+                for (let card of allCards) {
+                    const rect = card.getBoundingClientRect();
+                    const cardCenter = rect.left + rect.width / 2;
+                    const distanceFromCenter = Math.abs(viewportCenter - cardCenter);
+
+                    if (distanceFromCenter < rect.width / 2) {
+                        card.classList.add('is-center');
+                    } else {
+                        card.classList.remove('is-center');
+                    }
+                }
+            }
+
+            // Main Animation Loop (60 FPS Hardware Accelerated)
+            function animate() {
+                if (!isPaused && !isDragging) {
+                    currentX -= speed;
+
+                    // Infinite Reset Threshold
+                    if (Math.abs(currentX) >= singleSetWidth) {
+                        currentX = 0;
+                    }
+                }
+
+                // Render Translate3d
+                track.style.transform = `translate3d(${currentX}px, 0, 0)`;
+
+                // Update Progress Indicator
+                const progressPercent = (Math.abs(currentX) % singleSetWidth) / singleSetWidth * 100;
+                if (progressFill) {
+                    progressFill.style.width = `${progressPercent}%`;
+                }
+
+                updateCenterCardHighlight();
+
+                animationFrameId = requestAnimationFrame(animate);
+            }
+
+            // Start Loop
+            animationFrameId = requestAnimationFrame(animate);
+
+            // Interaction Pause on Hover
+            wrapper.addEventListener('mouseenter', () => {
+                isPaused = true;
+                if (pauseNotice) pauseNotice.style.opacity = '1';
+            });
+
+            wrapper.addEventListener('mouseleave', () => {
+                if (!isDragging) {
+                    isPaused = false;
+                    if (pauseNotice) pauseNotice.style.opacity = '0';
+                }
+            });
+
+            // Touch / Mouse Drag Logic
+            function onDragStart(e) {
+                isDragging = true;
+                isPaused = true;
+                startX = e.pageX || e.touches[0].pageX;
+                dragStartX = currentX;
+                if (pauseNotice) pauseNotice.style.opacity = '1';
+            }
+
+            function onDragMove(e) {
+                if (!isDragging) return;
+                const x = e.pageX || e.touches[0].pageX;
+                const walk = (x - startX) * 1.2;
+                currentX = dragStartX + walk;
+
+                // Handle Boundary Wrapping During Drag
+                if (currentX > 0) {
+                    currentX = -singleSetWidth + currentX;
+                } else if (Math.abs(currentX) >= singleSetWidth) {
+                    currentX = currentX + singleSetWidth;
+                }
+            }
+
+            function onDragEnd() {
+                isDragging = false;
+                isPaused = false;
+                if (pauseNotice) pauseNotice.style.opacity = '0';
+            }
+
+            wrapper.addEventListener('mousedown', onDragStart);
+            window.addEventListener('mousemove', onDragMove);
+            window.addEventListener('mouseup', onDragEnd);
+
+            wrapper.addEventListener('touchstart', onDragStart, { passive: true });
+            window.addEventListener('touchmove', onDragMove, { passive: true });
+            window.addEventListener('touchend', onDragEnd);
+        })();
+
+        /* ==========================================
+           4. TAB SYSTEM (ABOUT SECTION)
+           ========================================== */
+        function switchTab(evt, tabId) {
+            const tabBtns = document.querySelectorAll('.about-tab-btn');
+            const tabContents = document.querySelectorAll('.about-tab-content');
+
+            tabBtns.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            evt.currentTarget.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        /* ==========================================
+           5. INTERACTIVE MATERIAL SHOWCASE DATA
+           ========================================== */
+        const materialData = {
+            alu6063: {
+                title: "Aluminium Scrap 6063 Extrusions",
+                desc: "Clean architectural aluminium extrusions, free of iron, zinc, plastic, and heavy oil contamination. High purity for extrusion re-melting.",
+                purity: "98.5% Minimum",
+                isri: "Tabor / Taint",
+                industry: "Architectural & Automotive",
+                moisture: "< 0.5%",
+                img: "https://images.unsplash.com/photo-1605557202138-097824c3f8c4?q=80&w=800&auto=format&fit=crop"
+            },
+            alu6061: {
+                title: "Aluminium Scrap 6061 Structural",
+                desc: "Clean 6061 structural aluminium alloy solids, plates, and structural sections. Superior mechanical strength for casting and forging.",
+                purity: "97.8% Minimum",
+                isri: "Tense / Tough",
+                industry: "Aerospace & Marine Engineering",
+                moisture: "< 0.3%",
+                img: "https://images.unsplash.com/photo-1535813547-99c456a41d4a?q=80&w=800&auto=format&fit=crop"
+            },
+            steelScrap: {
+                title: "Heavy Melting Steel Scrap (HMS 1 & 2)",
+                desc: "Wrought iron and steel scrap prepared to standardized structural lengths. Ideal feed material for electric arc furnace (EAF) steelmaking.",
+                purity: "99.0% Ferrous Base",
+                isri: "200 - 206 Series",
+                industry: "Steel Mills & Infrastructure",
+                moisture: "Zero Attachments",
+                img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=800&auto=format&fit=crop"
+            },
+            copperScrap: {
+                title: "Copper Scrap (Birch / Cliff Grade)",
+                desc: "High-grade unalloyed copper wire and heavy solids. Inspected for minimal oxidation and complete absence of insulation coatings.",
+                purity: "99.2% Metallic Cu",
+                isri: "Birch / Cliff / Candy",
+                industry: "Electrical Grid & Electronics",
+                moisture: "Nil",
+                img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop"
+            }
+        };
+
+        function changeMaterial(key, elem) {
+            const btns = document.querySelectorAll('.material-select-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            elem.classList.add('active');
+
+            const data = materialData[key];
+            const display = document.getElementById('materialDisplay');
+            display.style.opacity = '0';
+            
+            setTimeout(() => {
+                document.getElementById('matTitle').innerText = data.title;
+                document.getElementById('matDesc').innerText = data.desc;
+                document.getElementById('specPurity').innerText = data.purity;
+                document.getElementById('specISRI').innerText = data.isri;
+                document.getElementById('specIndustry').innerText = data.industry;
+                document.getElementById('specMoisture').innerText = data.moisture;
+                document.getElementById('matImg').src = data.img;
+                display.style.opacity = '1';
+            }, 250);
+        }
+
+        /* ==========================================
+           6. ANIMATED COUNTER SYSTEM
+           ========================================== */
+        const counters = document.querySelectorAll('.counter-number');
+        let animated = false;
+
+        window.addEventListener('scroll', () => {
+            const counterSec = document.querySelector('.counter-section');
+            if (!counterSec) return;
+            const position = counterSec.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight;
+
+            if (position < screenPosition && !animated) {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const updateCount = () => {
+                        const count = +counter.innerText.replace('+', '');
+                        const increment = target / 80;
+
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + increment) + '+';
+                            setTimeout(updateCount, 25);
+                        } else {
+                            counter.innerText = target.toLocaleString() + '+';
+                        }
+                    };
+                    updateCount();
+                });
+                animated = true;
+            }
+        });
+    </script>
+</body>
+</html>
